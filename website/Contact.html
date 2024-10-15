@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camotes Electric Cooperative</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/PROGRAM.svg" alt="Transparent Background Image" class="logo"></a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Home.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+    </section>
+
+     <!----------contact us------------>
+     <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.3487163199893!2d124.39943487369375!3d10.629994061880351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a82cb720f79d57%3A0x203c3f3a45faf7e6!2sCamotes%20Electric%20Cooperative-(CELCO)!5e0!3m2!1sfil!2sph!4v1728970250301!5m2!1sfil!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </section>
+     
+     <section class="contact-us">
+        <div class="row">
+
+            <!-- Address Section -->
+            <div class="contact-col">
+                <div>
+                    <i class="fas fa-home"></i> 
+                    <span>
+                        <h5>Camotes Electric Cooperative</h5>
+                        <p>Tamban, Western Poblacion, Poro, Cebu</p>
+                    </span>                  
+                </div>
+            </div>
+    
+            <!-- Phone Section -->
+            <div class="contact-col">
+                <div>
+                    <i class="fas fa-phone"></i> 
+                    <span>
+                        <h5>0917 322 0545</h5>
+                        <p>Monday to Friday, 8AM TO 5PM</p>
+                    </span>
+                </div>
+            </div>
+    
+            <!-- Email Section -->
+            <div class="contact-col">
+                <div>
+                    <i class="fas fa-envelope"></i>  
+                    <span>
+                        <h5>camotes_electric_coop@yahoo.com.ph</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="form-handler.php" method="post">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter email address" required>
+                    <input type="text" name="service" placeholder="Enter your service" required>
+                    <textarea rows="8" name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+   
+    <!----------footer------------>
+
+    <section class="footer">
+        <h4>Our Service's</h4>
+        <p>Kalipay namo ang pag-alagad kaninyo</p>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> by CELCO</p>
+    </section>
+
+    <script>
+        // JavaScript for Toggle Menu
+        var navLinks = document.getElementById("nav-links");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // JavaScript for Adding Comments
+        function addComment(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get input values
+            const name = event.target[0].value;
+            const email = event.target[1].value;
+            const comment = event.target[2].value;
+
+            // Create comment element
+            const commentDiv = document.createElement('div');
+            commentDiv.innerHTML = `<strong>${name}</strong> (${email})<br>${comment}<hr>`;
+            
+            // Append comment to comments container
+            document.getElementById('comments-container').appendChild(commentDiv);
+
+            // Clear the form
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

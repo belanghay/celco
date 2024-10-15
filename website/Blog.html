@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camotes Electric Cooperative</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/PROGRAM.svg" alt="Transparent Background Image" class="logo"></a>
+            <div class="nav-links" id="nav-links">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Home.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Our Certificate & Awards for the whole years</h1>
+    </section>
+    
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+               <img src="images/all awards.png" alt="Awards Image">
+               <h2>Our Certificate & Awards for the whole years</h2>
+               <p>"We are excited to announce that we have officially received our Certificate of Franchise! This important milestone reflects our dedication to excellence and our commitment to better serving our community. Thank you to everyone for your continued support as we embark on this new journey!"</p>
+               <br>
+               <p>"Exciting news! We are proud to announce that our Electric Cooperative (EC) has successfully fully liquidated its subsidy. This achievement demonstrates our commitment to transparency and responsible financial management, allowing us to reinvest in our infrastructure and enhance services for our community. Thank you for your continued support as we work towards a brighter and more sustainable future!"</p>
+               <br>
+               <p>"We are proud to present this Plaque of Appreciation to Camotes Electric Cooperative for their exceptional service and unwavering commitment to the community. Your dedication to providing reliable and sustainable energy has greatly enhanced the quality of life for the residents of Camotes. Thank you for your partnership and for being a beacon of progress in our island community!"</p>
+
+               <div class="comment-box">
+                   <h3>Leave a comment</h3>
+                   <form class="comment-form" onsubmit="return addComment(event);">
+                       <input type="text" placeholder="Enter Name" required>
+                       <input type="email" placeholder="Enter Email" required>
+                       <textarea rows="5" placeholder="Your comment" required></textarea>
+                       <button type="submit" class="hero-btn red-btn">POST COMMENT</button>
+                   </form>
+                   <div id="comments-container"></div> <!-- Container for displaying comments -->
+               </div>
+            </div>
+            <div class="blog-right">
+                <h3>Post Categories</h3>
+                <div>
+                    <span>Plaque of Appreciation</span>
+                    <span>9</span>
+                </div>
+                <div>
+                    <span>EC's with fully liquidated subsidy</span>
+                    <span>14</span>
+                </div>   
+                <div>
+                    <span>RE Program Distinction</span>
+                    <span>23</span>
+                </div>
+                <div>
+                    <span>Single Digit System Loss for the year</span>
+                    <span>17</span>
+                </div>
+                <div>
+                    <span>Sunshine EC</span>
+                    <span>10</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>Our Service's</h4>
+        <p>Kalipay namo ang pag-alagad kaninyo</p>
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> by CELCO</p>
+    </section>
+
+    <script>
+        
+        var navLinks = document.getElementById("nav-links");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        
+        function addComment(event) {
+            event.preventDefault(); 
+
+            
+            const name = event.target[0].value;
+            const email = event.target[1].value;
+            const comment = event.target[2].value;
+
+            
+            const commentDiv = document.createElement('div');
+            commentDiv.innerHTML = `<strong>${name}</strong> (${email})<br>${comment}<hr>`;
+            
+            
+            document.getElementById('comments-container').appendChild(commentDiv);
+
+            
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
